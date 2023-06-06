@@ -9,10 +9,10 @@ dir_out		= ./
 all: big small eigen
 
 big:
-	$(fc) $(fc_flag) -Mcudalib=$(cuLib) cuda_BatchInv_BigMatrix.f90 -o $(dir_out)inv_big
+	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchInv_BigMatrix.f90 -o $(dir_out)inv_big
 
 small:
-	$(fc) $(fc_flag) -Mcudalib=$(cuLib) cuda_BatchInv_SmallMatrix.f90 -o $(dir_out)inv_small			
+	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchInv_SmallMatrix.f90 -o $(dir_out)inv_small			
 
 eigen:
-	$(fc) $(fc_flag) -Mcudalib=$(cuLib) cuda_BatchEigen.f90 -o $(dir_out)batch_eigen
+	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchEigen.f90 -o $(dir_out)batch_eigen
