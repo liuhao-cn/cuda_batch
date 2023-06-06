@@ -1,2 +1,4 @@
 # cuda_batch
-A test of the CUDA batch operations
+A basic Fortran test of the CUDA batch operations.
+
+Simply configure and then make
