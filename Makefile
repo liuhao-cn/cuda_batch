@@ -2,17 +2,17 @@
 fc 			= nvfortran
 fc_flag 	= -O3 -Mcuda
 cuLib		= cublas,cusolver
-dir_out		= ./
+dir_out		= ./run
 
 # note that "make_plm" requires HEALPix 3.5 because it was modified especially for make_plm
 # all: make_plm
 all: big small eigen
 
 big:
-	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchInv_BigMatrix.f90 -o $(dir_out)inv_big
+	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchInv_BigMatrix.f90 -o $(dir_out)/inv_big
 
 small:
-	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchInv_SmallMatrix.f90 -o $(dir_out)inv_small			
+	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchInv_SmallMatrix.f90 -o $(dir_out)/inv_small			
 
 eigen:
-	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchEigen.f90 -o $(dir_out)batch_eigen
+	$(fc) $(fc_flag) -Mcudalib=$(cuLib) ./src/cuda_BatchEigen.f90 -o $(dir_out)/batch_eigen
